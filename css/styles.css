@@ -1,0 +1,260 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Variables */
+:root {
+  --primary-color: #fcf5e9;
+  --dark-color: #333;
+  --container-normal: 1100px;
+  --container-wide: 1400px;
+  --container-narrow: 900px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+/* Utilities Classes */
+.bg-primary {
+  background: var(--primary-color);
+  padding: 0 0.4rem;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+.bg-dark .bg-primary {
+  padding: 0 0.4rem;
+  color: var(--dark-color);
+  border-radius: 2px;
+}
+
+.section-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  font-size: inherit;
+  font-family: inherit;
+  border: 1px var(--dark-color) solid;
+  background: transparent;
+  color: var(--dark-color);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  &:hover {
+    color: var(--primary-color);
+    background: var(--dark-color);
+  }
+}
+/* Containers for the whole proj */
+.container {
+  max-width: var(--container-normal);
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+}
+
+.container-lg {
+  max-width: var(--container-wide);
+}
+
+.container-sm {
+  max-width: var(--container-narrow);
+}
+
+/* Header/Nav Bar */
+.header .logo {
+  width: 150px;
+}
+
+.header .header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .header-flex .main-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header .header-flex .main-menu a {
+  padding: 0.5rem;
+  &:hover {
+    background: var(--primary-color);
+    border-radius: 5px;
+  }
+}
+
+.header .header-flex .main-menu .current {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+/* note:we need to give it a height to center it on the cross axis with align-items */
+.hero {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.gallery-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-flex .gallery-item {
+  width: calc(33.333% - 20px);
+  border-radius: 10px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+.gallery-flex .gallery-item img {
+  border-radius: 10px;
+}
+/* Footer */
+.footer {
+  border-top: 1px solid #aaa;
+  padding: 1.5rem;
+}
+
+.footer .footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-flex .logo {
+  width: 150px;
+}
+
+.footer-flex h4 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+/* Services */
+.services {
+  background: #333;
+  color: #fff;
+  padding: 0.1rem 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.services .services-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services .services-flex h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+/* Team */
+.team {
+  padding: 3rem 0 4rem;
+}
+.team-flex {
+  display: flex;
+  gap: 15px;
+}
+.team img {
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact {
+  padding: 3rem 0 4rem;
+}
+
+.contact p {
+  text-align: center;
+  margin: 1rem;
+}
+
+.form-group input,
+textarea {
+  border: none;
+  border-bottom: 1px var(--dark-color) solid;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1rem 0.5rem;
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-group textarea {
+  resize: none;
+  padding: 4rem 0.5rem;
+}
+
+.form-group button {
+  width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header .header-flex,
+  .footer .footer-flex,
+  .services .services-flex,
+  .team .team-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .hero {
+    height: 300px;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .gallery-flex .gallery-item {
+    width: calc(50% - 20px);
+  }
+  .footer .footer-flex {
+    text-align: center;
+    margin-bottom: 0.9rem;
+  }
+}
